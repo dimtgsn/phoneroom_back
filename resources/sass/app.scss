@@ -1,0 +1,127 @@
+// Fonts
+//@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Leckerli+One&family=Montserrat+Alternates:wght@700&display=swap");
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// App
+body{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+.brand-title{
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #ffffff;
+  padding-left: 5px;
+  display: inline-block;
+  vertical-align: sub;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-title>span{
+  color: $red;
+  font-family: 'Leckerli One', cursive;
+}
+.brand-title>span>span{
+  color: $red;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.brand-title:hover{
+  color: #ffffff;
+}
+.brand-title:focus{
+
+}
+.brand-title:active{
+
+}
+.navbar{
+  background-color: $dark-grey;
+}
+.navbar img{
+  padding: 10px 0;
+}
+.navbar-nav .nav-link{
+  color: $white;
+  font-weight: 500;
+}
+body.my-login-page {
+  background-color: $body-bg;
+  font-size: 14px;
+}
+
+.my-login-page .brand {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,.05);
+  position: relative;
+  z-index: 1;
+}
+
+.my-login-page .brand img {
+  width: 100%;
+}
+
+.my-login-page .card-wrapper {
+  width: 450px;
+}
+
+.my-login-page .card {
+  border-color: transparent;
+  box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .card.fat {
+  padding: 10px;
+}
+
+.my-login-page .card .card-title {
+  margin-bottom: 30px;
+  color: $dark-grey;
+}
+
+.my-login-page .form-control {
+  border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+  width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+  padding: 12px 10px;
+}
+
+.my-login-page .footer {
+  margin: 40px 0;
+  color: #888;
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .my-login-page .card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .my-login-page .card.fat {
+    padding: 0;
+  }
+
+  .my-login-page .card.fat .card-body {
+    padding: 15px;
+  }
+}
