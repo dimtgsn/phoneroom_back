@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -61,5 +62,14 @@ class AppServiceProvider extends ServiceProvider
             );
 
         }
+
+        Validator::extend('phone', function($attribute, $value, $parameters, $validator) {
+            return preg_match('^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$', $value) && strlen($value) >= 11;
+        });
+
+        Validator::replacer('phone', function($message, $attribute, $rule, $parameters) {
+            return str_replace(':attribute',$attribute, ':attribute is invalid phone number');
+        });
+
     }
 }
